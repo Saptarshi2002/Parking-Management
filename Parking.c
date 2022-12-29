@@ -3,10 +3,11 @@ int menu();
 int bus();
 int car();
 int cycle();
+int bike();
 int detail();
 int delete();
 
-int noc=0,nob=0,nocy=0,amount=0,count=0;
+int noc=0,nob=0,nocy=0,amount=0,count=0,nob;
 int main()
 {
     while(1)
@@ -14,19 +15,19 @@ int main()
     switch(menu())
     {
         case 1:
-            bus();
-            break;
-        case 2:
-            car();
-            break;
-        case 3:
             cycle();
             break;
+        case 2:
+            bike();
+            break;
+        case 3:
+            car();
+            break;
         case 4:
-            detail();
+            bus();
             break;
         case 5:
-            delete();
+            detail();
             break;
         defalt :
             printf("\nwrong choice\n");
@@ -38,12 +39,12 @@ int main()
 int menu()
 {
     int ch;
-    printf("\nEnter choice\n");
-    printf("\n1. Enter Bus");
-    printf("\n2. Enter Car");
-    printf("\n3. Enter Cycle");
-    printf("\n4. Show data");
-    printf("\n5. Delete Data\n");
+    printf("\nEnter Choice\n");
+    printf("\n1. Enter Cycle");
+    printf("\n2. Enter Bike");
+    printf("\n3. Enter Car");
+    printf("\n4. Enter Bus");
+    printf("\n5. Show data\n");
     scanf("%d",&ch);
     return(ch);
 }
@@ -87,6 +88,14 @@ int cycle()
 {
     nocy++;
     amount+=10;
+    count++;
+    return 0;
+}
+
+int bike()
+{
+    nob++;
+    amount+=20;
     count++;
     return 0;
 }
