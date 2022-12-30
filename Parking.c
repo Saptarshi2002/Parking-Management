@@ -1,13 +1,17 @@
 #include<stdio.h>
 int menu();
-int bus();
-int car();
-int cycle();
-int bike();
+int bus_entry();
+int car_entry();
+int cycle_entry();
+int bike_entry();
+int bus_exit();
+int car_exit();
+int cycle_exit();
+int bike_exit();
 int detail();
 int delete();
 
-int noc=0,nob=0,nocy=0,amount=0,count=0,nob;
+int noc=0,nob=0,nocy=0,amount=0,count=0,noby=0;
 int main()
 {
     while(1)
@@ -15,16 +19,16 @@ int main()
     switch(menu())
     {
         case 1:
-            cycle();
+            cycle_entry();
             break;
         case 2:
-            bike();
+            bike_entry();
             break;
         case 3:
-            car();
+            car_entry();
             break;
         case 4:
-            bus();
+            bus_entry();
             break;
         case 5:
             detail();
@@ -64,11 +68,12 @@ int detail()
    printf("\nNumber of Bus= %d",nob );
     printf("\nNumber of Car = %d",noc);
     printf("\nNumber of Cycle = %d",nocy);
-    printf("\nTotal vehicle = %d",nob+noc+nocy);
+    printf("\nNumber of Bike = %d",noby);
+    printf("\nTotal vehicle = %d",nob+noc+nocy+noby);
     printf("\nTotal amount gained = %d",amount); 
     return 0;
 }
-int bus()
+int bus_entry()
 {
     nob++;
     amount+=50;
@@ -76,7 +81,7 @@ int bus()
     return 0;
 }
 
-int car()
+int car_entry()
 {
     noc++;
     amount = amount + 20;
@@ -84,7 +89,7 @@ int car()
     return 0;
 }
 
-int cycle()
+int cycle_entry()
 {
     nocy++;
     amount+=10;
@@ -92,9 +97,9 @@ int cycle()
     return 0;
 }
 
-int bike()
+int bike_entry()
 {
-    nob++;
+    noby++;
     amount+=20;
     count++;
     return 0;
