@@ -15,7 +15,7 @@ int capacity();
 
 int noc=0,nob=0,nocy=0,amount=0,count=0,noby=0;
 int poc=0,pob=0,pocy=0,poby=0,coc=0,cob=0,cocy=0,coby=0;;
-// int coc=0,cob=0,cocy=0,coby=0;
+ int noci=0,nobi=0,nocyi=0,nobyi=0;
 int main()
 {
     set_price();
@@ -97,33 +97,69 @@ int detail()
 }
 int bus_entry()
 {
-    nob++;
-    amount+=pob;
-    count++;
+    if(nobi<cob)
+    {
+        nobi++;
+        nob++;
+        amount+=pob;
+        count++;
+        printf("\nEntered successfully!!\n");
+    }
+    else
+    {
+        printf("\n!!Capacity full!!\n");
+    }
     return 0;
 }
 
 int car_entry()
 {
-    noc++;
-    amount = amount + poc;
-    count++;
+    if(noci<coc)
+    {
+        noci++;
+        noc++;
+        amount = amount + poc;
+        count++;
+        printf("\nEntered successfully!!\n");
+    }
+    else
+    {
+        printf("\n!!Capacity full!!\n");
+    }
     return 0;
 }
 
 int cycle_entry()
 {
-    nocy++;
-    amount+=pocy;
-    count++;
+    if(nocyi<cocy)
+    {
+        nocyi++;
+        nocy++;
+        amount+=pocy;
+        count++;
+        printf("\nEntered successfully!!\n");
+    }
+    else
+    {
+       printf("\n!!Capacity full!!\n"); 
+    }
     return 0;
 }
 
 int bike_entry()
 {
-    noby++;
-    amount+=poby;
-    count++;
+    if(noby<coby)
+    {
+        nobyi++;
+        noby++;
+        amount+=poby;
+        count++;
+        printf("\nEntered successfully!!\n");
+    }
+    else
+    {
+       printf("\n!!Capacity full!!\n"); 
+    }
     return 0;
 }
 
