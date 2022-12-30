@@ -10,10 +10,13 @@ int cycle_exit();
 int bike_exit();
 int detail();
 int delete();
+int set_price();
 
 int noc=0,nob=0,nocy=0,amount=0,count=0,noby=0;
+int poc=0,pob=0,pocy=0,poby=0;
 int main()
 {
+    set_price();
     while(1)
     {
     switch(menu())
@@ -81,7 +84,7 @@ int delete()
 }
 int detail()
 {
-   printf("\nNumber of Bus= %d",nob );
+    printf("\nNumber of Bus= %d",nob );
     printf("\nNumber of Car = %d",noc);
     printf("\nNumber of Cycle = %d",nocy);
     printf("\nNumber of Bike = %d",noby);
@@ -92,7 +95,7 @@ int detail()
 int bus_entry()
 {
     nob++;
-    amount+=50;
+    amount+=pob;
     count++;
     return 0;
 }
@@ -100,7 +103,7 @@ int bus_entry()
 int car_entry()
 {
     noc++;
-    amount = amount + 20;
+    amount = amount + poc;
     count++;
     return 0;
 }
@@ -108,7 +111,7 @@ int car_entry()
 int cycle_entry()
 {
     nocy++;
-    amount+=10;
+    amount+=pocy;
     count++;
     return 0;
 }
@@ -116,7 +119,37 @@ int cycle_entry()
 int bike_entry()
 {
     noby++;
-    amount+=20;
+    amount+=poby;
     count++;
+    return 0;
+}
+
+int set_price()
+{
+    printf("\nPlease set the parking fees of vehicles:\n");
+    printf("Enter the parking fees of cycle: ");
+    scanf("%d",&pocy);
+    printf("Enter the parking fees of bike: ");
+    scanf("%d",&poby);
+    printf("Enter the parking fees of car: ");
+    scanf("%d",&poc);
+    printf("Enter the parking fees of bus: ");
+    scanf("%d",&pob);
+    return 0;
+}
+int bus_exit()
+{
+    return 0;
+}
+int car_exit()
+{
+    return 0;
+}
+int cycle_exit()
+{
+    return 0;
+}
+int bike_exit()
+{
     return 0;
 }
