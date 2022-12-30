@@ -18,17 +18,29 @@ int main()
     {
     switch(menu())
     {
-        case 1:
+        case 11:
             cycle_entry();
             break;
-        case 2:
+        case 21:
             bike_entry();
             break;
-        case 3:
+        case 31:
             car_entry();
             break;
-        case 4:
+        case 41:
             bus_entry();
+            break;
+         case 10:
+            cycle_exit();
+            break;
+        case 20:
+            bike_exit();
+            break;
+        case 30:
+            car_exit();
+            break;
+        case 40:
+            bus_exit();
             break;
         case 5:
             detail();
@@ -44,10 +56,14 @@ int menu()
 {
     int ch;
     printf("\nEnter Choice\n");
-    printf("\n1. Enter Cycle");
-    printf("\n2. Enter Bike");
-    printf("\n3. Enter Car");
-    printf("\n4. Enter Bus");
+    printf("\n11. Enter Cycle");
+    printf("\n10. Exit Cycle");
+    printf("\n21. Enter Bike");
+    printf("\n20. Exit Bike");
+    printf("\n31. Enter Car");
+    printf("\n30. Exit Car");
+    printf("\n41. Enter Bus");
+    printf("\n40. Exit Bus");
     printf("\n5. Show data\n");
     scanf("%d",&ch);
     return(ch);
