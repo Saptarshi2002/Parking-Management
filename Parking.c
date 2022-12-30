@@ -11,12 +11,15 @@ int bike_exit();
 int detail();
 int delete();
 int set_price();
+int capacity();
 
 int noc=0,nob=0,nocy=0,amount=0,count=0,noby=0;
-int poc=0,pob=0,pocy=0,poby=0;
+int poc=0,pob=0,pocy=0,poby=0,coc=0,cob=0,cocy=0,coby=0;;
+// int coc=0,cob=0,cocy=0,coby=0;
 int main()
 {
     set_price();
+    capacity();
     while(1)
     {
     switch(menu())
@@ -151,5 +154,19 @@ int cycle_exit()
 }
 int bike_exit()
 {
+    return 0;
+}
+
+int capacity()
+{
+    printf("\n Please insert the capacity of each vehicle:\n");
+    printf("Enter the total capacity of cycle: ");
+    scanf("%d",&cocy);
+    printf("Enter the total capacity of bike: ");
+    scanf("%d",&coby);
+    printf("Enter the total capacity of car: ");
+    scanf("%d",&coc);
+    printf("Enter the total capacity of bus: ");
+    scanf("%d",&cob);
     return 0;
 }
