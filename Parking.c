@@ -178,6 +178,15 @@ int set_price()
 }
 int bus_exit()
 {
+    if(nobi>0)
+    {
+        printf("Exit successfull!\n");
+        nobi--;
+    }
+    else
+    {
+        printf("No. bus inside to exit!!\n");
+    }
     return 0;
 }
 int car_exit()
