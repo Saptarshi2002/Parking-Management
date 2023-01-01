@@ -191,6 +191,15 @@ int bus_exit()
 }
 int car_exit()
 {
+    if(noci>0)
+    {
+        printf("Exit successfull!\n");
+        noci--;
+    }
+    else
+    {
+        printf("No. car inside to exit!!\n");
+    }
     return 0;
 }
 int cycle_exit()
