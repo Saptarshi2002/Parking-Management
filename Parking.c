@@ -90,7 +90,7 @@ int detail()
     printf("\nNumber of Bus= %d",NumberOfBus );
     printf("\nNumber of Car = %d",NumberOfCar);
     printf("\nNumber of Cycle = %d", NumberOfCycle);
-    printf("\nNumb er of Bik e = %d", NumberOfBike);
+    printf("\nNumber of Bike = %d", NumberOfBike);
     printf("\nTotal vehicle = %d",NumberOfBus+ NumberOfCar + NumberOfCycle + NumberOfBike);
     printf("\nTotal amount gained = %d",amount); 
     return 0;
