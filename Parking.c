@@ -13,9 +13,9 @@ int delete();
 int set_price();
 int capacity();
 
-int noc=0,nob=0,nocy=0,amount=0,count=0,noby=0;
-int poc=0,pob=0,pocy=0,poby=0,coc=0,cob=0,cocy=0,coby=0;;
- int noci=0,nobi=0,nocyi=0,nobyi=0;
+int NumberOfCar=0, NumberOfBus=0, NumberOfCycle=0, amount=0, count=0, NumberOfBike=0;
+int PriceOfCar=0, PriceOfBus=0, PriceOfCycle=0, PriceofBike=0, CapacityOfCar=0, CapacityOfBus=0, CapacityOfCycle=0, CapacityOfBike=0;;
+ int noCarIn=0,noBusIn=0, noCycleIn=0, noBikeIn=0;
 int main()
 {
     set_price();
@@ -77,31 +77,31 @@ int menu()
 
 int delete()
 {
-    nob=0;
-    noc=0;
-    noc=0;
-    nocy=0;
+    NumberOfBus=0;
+    NumberOfCar=0;
+    NumberOfCar=0;
+    NumberOfCycle=0;
     amount=0;
     count=0;
     return 0;
 }
 int detail()
 {
-    printf("\nNumber of Bus= %d",nob );
-    printf("\nNumber of Car = %d",noc);
-    printf("\nNumber of Cycle = %d",nocy);
-    printf("\nNumber of Bike = %d",noby);
-    printf("\nTotal vehicle = %d",nob+noc+nocy+noby);
+    printf("\nNumber of Bus= %d",NumberOfBus );
+    printf("\nNumber of Car = %d",NumberOfCar);
+    printf("\nNumber of Cycle = %d", NumberOfCycle);
+    printf("\nNumber of Bike = %d", NumberOfBike);
+    printf("\nTotal vehicle = %d",NumberOfBus+ NumberOfCar + NumberOfCycle + NumberOfBike);
     printf("\nTotal amount gained = %d",amount); 
     return 0;
 }
 int bus_entry()
 {
-    if(nobi<cob)
+    if(noBusIn < CapacityOfBus)
     {
-        nobi++;
-        nob++;
-        amount+=pob;
+        noBusIn++;
+        NumberOfBus++;
+        amount += PriceOfBus;
         count++;
         printf("\nEntered successfully!!\n");
     }
@@ -114,11 +114,11 @@ int bus_entry()
 
 int car_entry()
 {
-    if(noci<coc)
+    if(noCarIn < CapacityOfCar)
     {
-        noci++;
-        noc++;
-        amount = amount + poc;
+        noCarIn++;
+        NumberOfCar++;
+        amount += PriceOfCar;
         count++;
         printf("\nEntered successfully!!\n");
     }
@@ -131,11 +131,11 @@ int car_entry()
 
 int cycle_entry()
 {
-    if(nocyi<cocy)
+    if (noCycleIn < CapacityOfCycle)
     {
-        nocyi++;
-        nocy++;
-        amount+=pocy;
+        noCycleIn++;
+        NumberOfCycle++;
+        amount += PriceOfCycle;
         count++;
         printf("\nEntered successfully!!\n");
     }
@@ -147,12 +147,12 @@ int cycle_entry()
 }
 
 int bike_entry()
-{
-    if(noby<coby)
+{ 
+    if(noBikeIn < CapacityOfBike)
     {
-        nobyi++;
-        noby++;
-        amount+=poby;
+        noBikeIn++;
+        NumberOfBike++;
+        amount += PriceofBike;
         count++;
         printf("\nEntered successfully!!\n");
     }
@@ -167,47 +167,66 @@ int set_price()
 {
     printf("\nPlease set the parking fees of vehicles:\n");
     printf("Enter the parking fees of cycle: ");
-    scanf("%d",&pocy);
+    scanf("%d",&PriceOfCycle);
     printf("Enter the parking fees of bike: ");
-    scanf("%d",&poby);
+    scanf("%d",&PriceofBike);
     printf("Enter the parking fees of car: ");
-    scanf("%d",&poc);
+    scanf("%d",&PriceOfCar);
     printf("Enter the parking fees of bus: ");
-    scanf("%d",&pob);
+    scanf("%d",&PriceOfBus);
     return 0;
 }
 int bus_exit()
 {
-    if(nobi>0)
+    if(noBusIn > 0)
     {
         printf("Exit successfull!\n");
-        nobi--;
+        noBusIn--;
     }
     else
     {
-        printf("No. bus inside to exit!!\n");
+        printf("No bus inside to exit!!\n");
     }
     return 0;
 }
 int car_exit()
 {
-    if(noci>0)
+    if(noCarIn > 0)
     {
         printf("Exit successfull!\n");
-        noci--;
+        noCarIn--;
     }
     else
     {
-        printf("No. car inside to exit!!\n");
+        printf("No car inside to exit!!\n");
     }
     return 0;
 }
 int cycle_exit()
-{
+{   
+    if(noCycleIn > 0)
+    {
+        printf("Exit successfull!\n");
+        noCycleIn--;
+    }
+    else
+    {
+        printf("No cycle inside to exit!!\n");
+    }
     return 0;
 }
 int bike_exit()
-{
+{ 
+    if(noBikeIn > 0)
+    {
+        printf("Exit successfu ll!\n");
+        noBikeIn--;
+    }
+    else
+    {
+        printf("No bike inside to exit!!\n");
+    }
+    return 0;
     return 0;
 }
 
@@ -215,12 +234,12 @@ int capacity()
 {
     printf("\n Please insert the capacity of each vehicle:\n");
     printf("Enter the total capacity of cycle: ");
-    scanf("%d",&cocy);
+    scanf("%d",&CapacityOfCycle);
     printf("Enter the total capacity of bike: ");
-    scanf("%d",&coby);
+    scanf("%d",&CapacityOfBike);
     printf("Enter the total capacity of car: ");
-    scanf("%d",&coc);
+    scanf("%d",&CapacityOfCar);
     printf("Enter the total capacity of bus: ");
-    scanf("%d",&cob);
+    scanf("%d",&CapacityOfBus);
     return 0;
 }
